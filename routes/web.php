@@ -26,7 +26,6 @@ Route::get('/cache/all', function () {
     Artisan::call('key:generate');
     Artisan::call('config:cache');
     Artisan::call('view:cache');
-    Artisan::call('route:cache');
 
 });
 
