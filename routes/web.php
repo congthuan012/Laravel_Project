@@ -21,12 +21,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 //Server hosting
-Route::get('/cache/all', function () {
+Route::get('/cache', function () {
     Artisan::call('cache:clear');
     Artisan::call('key:generate');
     Artisan::call('config:cache');
     Artisan::call('view:cache');
-    Artisan::call('route:cache');
 
 });
 
