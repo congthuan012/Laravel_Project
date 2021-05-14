@@ -24,7 +24,6 @@ $(function(){
                     showConfirmButton: false,
                     timer: 1500
                 });
-                console.log(res);
                 $('#minicart').html(res.minicart);
             },
             error:function(error){

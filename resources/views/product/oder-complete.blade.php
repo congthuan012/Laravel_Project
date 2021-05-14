@@ -12,21 +12,7 @@
 
     <div class="container">
 
-        <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <ul class="breadcrumb breadcrumb-dividers-no-opacity font-weight-bold text-6 justify-content-center my-5">
-                    <li class="text-transform-none mr-2">
-                        <a href="" class="text-decoration-none text-color-dark text-color-hover-primary">{{ __('Shopping Cart') }}</a>
-                    </li>
-                    <li class="text-transform-none text-color-dark mr-2">
-                        <a href="" class="text-decoration-none text-color-dark text-color-hover-primary">{{ __('Checkout') }}</a>
-                    </li>
-                    <li class="text-transform-none text-color-dark">
-                        <a href="" class="text-decoration-none text-color-primary">{{ __('Order Complete') }}</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+        @include('widget.cart-menu')
 
         <div class="row justify-content-center">
             @if (session('cart'))

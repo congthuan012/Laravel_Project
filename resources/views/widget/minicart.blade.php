@@ -32,7 +32,6 @@
 <script src="{{ asset('assets/vendor/jquery/jquery.min.js') }}"></script>
 <script>
     $('.btn-remove').click(function () {
-        console.log('aaa');
         var _that = $(this);
         var _oldHtml = _that.html();
         var _url = _that.data('url');
@@ -57,7 +56,6 @@
                     showConfirmButton: false,
                     timer: 1500
                 });
-                console.log(res);
                 $('#minicart').html(res.minicart);
             },
             error: function (error) {
