@@ -83,10 +83,10 @@
                     @endif
                     <div class="form-group row">
                         <label
-                            class="col-lg-3 col-form-label form-control-label line-height-9 pt-2 text-2 required">Password</label>
+                            class="col-lg-3 col-form-label form-control-label line-height-9 pt-2 text-2 required">New Password</label>
                         <div class="col-lg-9">
                             <input class="form-control text-3 h-auto py-2" type="password" name="password"
-                                value="" required>
+                                value="">
                         </div>
                     </div>
                     @if ($errors->first('password'))
@@ -94,10 +94,10 @@
                     @endif
                     <div class="form-group row">
                         <label
-                            class="col-lg-3 col-form-label form-control-label line-height-9 pt-2 text-2 required">Confirm Password</label>
+                            class="col-lg-3 col-form-label form-control-label line-height-9 pt-2 text-2 required">Confirm New Password</label>
                         <div class="col-lg-9">
                             <input class="form-control text-3 h-auto py-2" type="password" name="password_confirmation"
-                                value="" required>
+                                value="">
                         </div>
                     </div>
                     {{-- <div class="form-group row">
@@ -133,6 +133,17 @@
                     </div>
                     @if ($errors->first('sdt'))
                         <label class="text-color-danger text-3">{{ $errors->first('sdt') }}</label>
+                    @endif
+                    <div class="form-group row">
+                        <label
+                            class="col-lg-3 col-form-label form-control-label line-height-9 pt-2 text-2 required">Địa chỉ</label>
+                        <div class="col-lg-9">
+                            <input class="form-control text-3 h-auto py-2" type="text" name="dia_chi" value="{{ auth()->user()->dia_chi }}"
+                                required>
+                        </div>
+                    </div>
+                    @if ($errors->first('dia_chi'))
+                        <label class="text-color-danger text-3">{{ $errors->first('dia_chi') }}</label>
                     @endif
                     <div class="form-group row">
                         <div class="form-group col-lg-9">

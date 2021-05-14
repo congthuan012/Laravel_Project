@@ -116,6 +116,13 @@
                 $(this).next().slideToggle();
             });
         });
+
+        $(document).ready(function () {
+            $(".comment").on("click", function (event) {
+                event.preventDefault();
+                $(this).next().slideToggle();
+            });
+        });
     </script>
     @yield('page-js')
 
