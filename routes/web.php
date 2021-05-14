@@ -3,10 +3,8 @@
 use App\Http\Controllers\frontend\BlogController;
 use App\Http\Controllers\frontend\CartController;
 use App\Http\Controllers\backend\ProductController;
-use App\Http\Controllers\Controller;
 use App\Http\Controllers\frontend\HomeController;
 use App\Http\Controllers\LanguageController;
-use App\Http\Controllers\TestAjaxController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
@@ -26,7 +24,6 @@ Route::get('/cache', function () {
     Artisan::call('key:generate');
     Artisan::call('config:cache');
     Artisan::call('view:cache');
-
 });
 
 Route::get('/', function () {
@@ -74,10 +71,10 @@ Route::group(['middleware' => 'language'], function () {
     Route::group(['middleware' => 'auth.login'], function () {
         Route::get('/checkout', [CartController::class, 'checkOut'])->name('checkout');
         Route::post('/do-checkout', [CartController::class, 'doCheckout'])->name('do-checkout');
-        Route::get('profile', [HomeController::class, 'profile'])->name('profile');
         Route::get('logout', [HomeController::class, 'logout'])->name('logout');
         Route::get('profile', [HomeController::class, 'profile'])->name('profile');
         Route::post('profile', [HomeController::class, 'updateProfile'])->name('profile');
+        Route::get('list-mail',[HomeController::class,'myMail'])->name('my-mail');
 
         Route::name('product.')->group(function () {
             Route::post('review-{id}',[ProductController::class,'review'])->name('review');

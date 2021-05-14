@@ -116,9 +116,9 @@
                                                 {{ auth()->user()->ten }}
                                                 <i class="fas fa-chevron-down"></i></a>
                                             <ul class="dropdown-menu">
-                                                <li><a class="dropdown-item" href="{{ route('profile')}}">{{ __('Profile') }}</a>
-                                                </li>
-                                                <li><a class="dropdown-item" href="{{ route('logout') }}">{{ __('Logout') }}</a>
+                                                <li><a class="dropdown-item" href="{{ route('profile')}}">{{ __('Profile') }}</a></li>
+                                                <li><a class="dropdown-item" href="{{ route('my-mail') }}">{{ __('Mails') }}</a></li>
+                                                <li><a class="dropdown-item" href="{{ route('logout') }}">{{ __('Logout') }}</a></li>
                                             </ul>
                                         </li>
                                         @else

@@ -11,7 +11,7 @@
  Target Server Version : 100417
  File Encoding         : 65001
 
- Date: 11/05/2021 11:45:38
+ Date: 14/05/2021 10:23:07
 */
 
 SET NAMES utf8mb4;
@@ -168,7 +168,7 @@ INSERT INTO `chucnang` VALUES (39, 'Danh sách loại sản phẩm', 'index.php?
 INSERT INTO `chucnang` VALUES (40, 'Thêm loại sản phẩm', 'index.php?controller=loai&action=create', 2, 1, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, NULL, NULL);
 INSERT INTO `chucnang` VALUES (41, 'Sửa', 'index.php?controller=loai&action=edit', 2, 0, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, NULL, NULL);
 INSERT INTO `chucnang` VALUES (42, 'Xóa', 'index.php?controller=loai&action=delete', 2, 0, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, NULL, NULL);
-INSERT INTO `chucnang` VALUES (43, 'Liên hệ', '#', 0, 1, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 'fa fa-comment', NULL);
+INSERT INTO `chucnang` VALUES (43, 'Liên hệ', 'index.php?controller=mail&action=mail', 0, 1, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 'fa fa-comment', NULL);
 INSERT INTO `chucnang` VALUES (45, 'Xem chi tiết đơn hàng', 'index.php?controller=donhang&action=detail', 7, 0, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, NULL, NULL);
 INSERT INTO `chucnang` VALUES (46, 'Xóa vĩnh viễn đơn hàng', 'index.php?controller=donhang&action=destroy', 7, 0, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, NULL, NULL);
 INSERT INTO `chucnang` VALUES (47, 'Khôi phục đơn hàng', 'index.php?controller=donhang&action=restore', 7, 0, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, NULL, NULL);
@@ -185,9 +185,8 @@ INSERT INTO `chucnang` VALUES (58, 'Xóa vĩnh viễn nhà cung cấp', 'index.p
 INSERT INTO `chucnang` VALUES (59, 'Khôi phục nhà cung cấp', 'index.php?controller=nhacungcap&action=restore', 2, 0, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, NULL, NULL);
 INSERT INTO `chucnang` VALUES (60, 'Xóa vĩnh viễn', 'index.php?controller=nhom&action=destroy', 28, 0, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, NULL, NULL);
 INSERT INTO `chucnang` VALUES (61, 'Khôi phục', 'index.php?controller=nhom&action=restore', 28, 0, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, NULL, NULL);
-INSERT INTO `chucnang` VALUES (62, 'Gửi mail', 'index.php?controller=hethong&action=contact', 43, 1, 1, '2021-05-06 14:05:48', '0000-00-00 00:00:00', 1, NULL, NULL);
-INSERT INTO `chucnang` VALUES (63, 'Danh sách mail', 'index.php?controller=mail&action=mail', 43, 1, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, NULL, NULL);
-INSERT INTO `chucnang` VALUES (64, 'Trả lời mail', 'index.php?controller=mail&action=replay', 43, 0, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, NULL, NULL);
+INSERT INTO `chucnang` VALUES (62, 'Xóa mail', 'index.php?controller=mail&action=delete', 43, 0, 1, '2021-05-06 14:05:48', '0000-00-00 00:00:00', 1, NULL, NULL);
+INSERT INTO `chucnang` VALUES (64, 'Trả lời mail', 'index.php?controller=mail&action=reply', 43, 0, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, NULL, NULL);
 INSERT INTO `chucnang` VALUES (65, 'Chi tiết mail', 'index.php?controller=mail&action=maildetail', 43, 0, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, NULL, NULL);
 
 -- ----------------------------
@@ -266,26 +265,6 @@ INSERT INTO `donhang` VALUES (84, '2021-05-10 23:37:32', 'HD0084', 1, 14489000, 
 INSERT INTO `donhang` VALUES (85, '2021-05-11 11:23:17', 'HD0085', 1, 15489000, NULL, '1', 1, '2021-05-11 04:23:17', '2021-05-11 04:23:17', ', 123 huynh thuc khang, , , ', NULL, NULL);
 
 -- ----------------------------
--- Table structure for failed_jobs
--- ----------------------------
-DROP TABLE IF EXISTS `failed_jobs`;
-CREATE TABLE `failed_jobs`  (
-  `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
-  `uuid` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `connection` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `queue` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `payload` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `exception` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `failed_at` timestamp NOT NULL DEFAULT current_timestamp,
-  PRIMARY KEY (`id`) USING BTREE,
-  UNIQUE INDEX `failed_jobs_uuid_unique`(`uuid`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
-
--- ----------------------------
--- Records of failed_jobs
--- ----------------------------
-
--- ----------------------------
 -- Table structure for khachhang
 -- ----------------------------
 DROP TABLE IF EXISTS `khachhang`;
@@ -310,7 +289,7 @@ CREATE TABLE `khachhang`  (
 -- Records of khachhang
 -- ----------------------------
 INSERT INTO `khachhang` VALUES (1, 'khachhang1', NULL, '2021-05-04 17:23:49', 'congthuan036288@gmail.com', '1234567890', '$2y$10$8LjLR0SVX5dUk4HIqx9DPeRelbH5Nbd6V1RjUQUnbCAPjuAul01py', NULL, 1, '', '123 huynh thuc khang', 'assets/img/avatars/admin.png', NULL);
-INSERT INTO `khachhang` VALUES (2, 'khách hàng 2', '2021-05-10 06:28:56', NULL, 'khachhang2@gmail.com', '1234567890', '$2y$10$U2Yt2yfAO8o8xkahPX6pVeG9q4pC71.0O46OaaabJQofKfXCmiDti', NULL, 1, NULL, '65 Huỳnh Thúc Kháng', 'assets/img/avatars/user.png', NULL);
+INSERT INTO `khachhang` VALUES (2, 'khách hàng 2', '2021-05-10 06:28:56', '2021-05-13 08:35:04', 'khachhang2@gmail.com', '1234567890', '$2y$10$U2Yt2yfAO8o8xkahPX6pVeG9q4pC71.0O46OaaabJQofKfXCmiDti', NULL, 1, NULL, '65 Huỳnh Thúc Kháng', 'assets/img/avatars/user.png', NULL);
 INSERT INTO `khachhang` VALUES (3, 'khách hàng 3', '2021-05-10 06:29:29', NULL, 'khachhang3@gmail.com', '1234567890', '$2y$10$FOouFhUA51jaKCOwBJO1juAn0tSWNrntnvqA7J/OrE3/GvMm83TYa', NULL, 1, NULL, '66 Huỳnh Thúc Kháng', 'assets/img/avatars/user.png', NULL);
 
 -- ----------------------------
@@ -318,51 +297,22 @@ INSERT INTO `khachhang` VALUES (3, 'khách hàng 3', '2021-05-10 06:29:29', NULL
 -- ----------------------------
 DROP TABLE IF EXISTS `lien_he_kh`;
 CREATE TABLE `lien_he_kh`  (
-  `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
-  `tieu_de` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
-  `noi_dung` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL,
+  `id` int NOT NULL,
+  `chu_de` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
   `nguoi_tao` int NULL DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL,
+  `created_at` datetime NULL DEFAULT NULL,
+  `updated_at` datetime NULL DEFAULT NULL,
+  `deleted_at` datetime NULL DEFAULT NULL,
+  `trangthai` int NULL DEFAULT NULL,
+  `noi_dung` longtext CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of lien_he_kh
 -- ----------------------------
-INSERT INTO `lien_he_kh` VALUES (1, 'sadasdasd', 'asdasdasdsadsad asssssssssssssssssssss asdasd', 1, '2021-05-10 15:54:30', '2021-05-10 15:54:30', NULL);
-INSERT INTO `lien_he_kh` VALUES (2, 'asddddddddddddddddddddd', 'asdasdsad', 1, '2021-05-10 15:55:18', '2021-05-10 15:55:18', NULL);
-INSERT INTO `lien_he_kh` VALUES (3, 'asdasd asdasd adasd', 'asdasd asdasd asdasd asdsad asdasd asdas asdasd', 1, '2021-05-10 15:55:54', '2021-05-10 15:55:54', NULL);
-INSERT INTO `lien_he_kh` VALUES (4, 'asdasdasdasd', 'sadsadasdasdasdsa', 1, '2021-05-10 15:56:34', '2021-05-10 15:56:34', NULL);
-INSERT INTO `lien_he_kh` VALUES (5, 'adasdas asdadasd asdasdas', 'asdasdasd asdasdas asdassddasd asdasds', 1, '2021-05-10 15:57:03', '2021-05-10 15:57:03', NULL);
-
--- ----------------------------
--- Table structure for lienhe
--- ----------------------------
-DROP TABLE IF EXISTS `lienhe`;
-CREATE TABLE `lienhe`  (
-  `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
-  `la_mail_tra_loi` tinyint NULL DEFAULT NULL,
-  `chu_de` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
-  `noi_dung` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `deleted_at` timestamp NULL DEFAULT NULL,
-  `nguoi_tao` int NULL DEFAULT NULL,
-  `trangthai` int NULL DEFAULT NULL,
-  `nguoi_duoc_phep_tra_loi` int NULL DEFAULT NULL,
-  `tra_loi` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
-  `tom_tat` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL,
-  PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
-
--- ----------------------------
--- Records of lienhe
--- ----------------------------
-INSERT INTO `lienhe` VALUES (1, 0, 'chu de 1', 'noi dung 1', '2021-05-05 17:22:12', NULL, NULL, 2, 1, 1, '2', 'tóm tắt');
-INSERT INTO `lienhe` VALUES (2, 1, 'asdadadasd', 'sadasda', '2021-05-06 08:59:05', NULL, NULL, 1, 1, 2, NULL, 'tóm tắt');
-INSERT INTO `lienhe` VALUES (3, 0, 'asdadad', 'asdadasd', '2021-05-06 09:00:44', NULL, NULL, 2, 1, 1, NULL, 'tóm tắt');
+INSERT INTO `lien_he_kh` VALUES (1, 'chủ đề 1', 1, '2021-05-12 21:34:28', NULL, NULL, 1, 'Nội dung 1');
+INSERT INTO `lien_he_kh` VALUES (2, 'chủ đề 2', 2, '2021-05-13 11:09:35', NULL, NULL, 1, 'Nội dung 2');
 
 -- ----------------------------
 -- Table structure for loai_bai_viet
@@ -690,6 +640,29 @@ INSERT INTO `theo_doi_don_hang` VALUES (2, 'Đang chuẩn bị', NULL);
 INSERT INTO `theo_doi_don_hang` VALUES (3, 'đang giao', NULL);
 INSERT INTO `theo_doi_don_hang` VALUES (4, 'Đã giao', NULL);
 INSERT INTO `theo_doi_don_hang` VALUES (5, 'Hủy', NULL);
+
+-- ----------------------------
+-- Table structure for tra_loi_lien_he
+-- ----------------------------
+DROP TABLE IF EXISTS `tra_loi_lien_he`;
+CREATE TABLE `tra_loi_lien_he`  (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `tieu_de` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `noi_dung` longtext CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL,
+  `nguoi_tra_loi` int NULL DEFAULT NULL,
+  `created_at` datetime NULL DEFAULT NULL,
+  `updated_at` datetime NULL DEFAULT NULL,
+  `deleted_at` datetime NULL DEFAULT NULL,
+  `tra_loi` int NULL DEFAULT NULL,
+  `trangthai` int NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of tra_loi_lien_he
+-- ----------------------------
+INSERT INTO `tra_loi_lien_he` VALUES (4, 'asdasdsad', 'asddddddddddddddddddasdasda adasdadasdadasdasd asdasd asdas asd', 1, '2021-05-13 10:15:11', NULL, NULL, 2, 1);
+INSERT INTO `tra_loi_lien_he` VALUES (5, 'asdasdas', 'asda adas asd as asd a as sa a', 1, '2021-05-13 10:17:00', NULL, NULL, 2, 1);
 
 -- ----------------------------
 -- Table structure for trang_thai_don_hang

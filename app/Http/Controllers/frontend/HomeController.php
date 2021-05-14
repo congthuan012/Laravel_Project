@@ -7,6 +7,7 @@ use App\Models\BlogModel;
 use App\Models\Guest;
 use App\Models\GuestContact;
 use App\Models\Product;
+use App\Models\RepMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -104,11 +105,13 @@ class HomeController extends Controller
             'ten'   => ['required','string'],
             'email' => ['required','email'],
             'sdt'   => ['required'],
+            'dia_chi'   => ['required'],
         ]);
         $user = Guest::where('email',auth()->user()->email)->first();
         $user->ten = $request->ten;
         $user->email = $request->email;
         $user->sdt = $request->sdt;
+        $user->dia_chi = $request->dia_chi;
         if($request->password != null)
         {
             $request->validate([
@@ -119,12 +122,7 @@ class HomeController extends Controller
         $user->save();
         if($user)
         {
-            Auth::guard('guests')->logout();
-            $isLogin = Auth::guard('guests')->attempt(['email' => $request->email, 'password' => $request->password]);
-            if($isLogin)
-            {
                 return redirect()->route('profile')->with(['msg'=>'Update information success!','status'=>'success']);
-            }
         }else{
             return redirect()->route('profile')->with(['msg'=>'Server error!','status'=>'error']);
         }
@@ -221,6 +219,12 @@ class HomeController extends Controller
             'blogs',
             'search'
         ));
+    }
+
+    public function myMail(){
+        $page = 'mail';
+        $mails = GuestContact::where('nguoi_tao',auth()->user()->id)->get();
+        return view('user.mail',['mails'=>$mails]);
     }
     public function _404()
     {
