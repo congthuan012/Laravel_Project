@@ -104,7 +104,7 @@
     swal({
         icon: "{!! session('status') !!}",
         title: "{!! session('msg') !!}",
-        showConfirmButton: false,
+        button: false,
         timer: 3000
     });
     @endif

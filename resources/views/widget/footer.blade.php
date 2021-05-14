@@ -47,12 +47,12 @@
             <div class="col-md-6 col-lg-2">
                 <h5 class="text-3 mb-3">{{ __('FOLLOW US') }}</h5>
                 <ul class="social-icons">
-                    <li class="social-icons-facebook"><a href="http://www.facebook.com/" target="_blank"
-                            title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-                    <li class="social-icons-twitter"><a href="http://www.twitter.com/" target="_blank"
-                            title="Twitter"><i class="fab fa-twitter"></i></a></li>
-                    <li class="social-icons-linkedin"><a href="http://www.linkedin.com/" target="_blank"
-                            title="Linkedin"><i class="fab fa-linkedin-in"></i></a></li>
+                    <li class="social-icons-facebook"><a href="https://www.facebook.com/thuan.huynhcong.712" target="_blank"
+                        title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                    <li class="social-icons-twitter"><a href="https://t.me/congthuan012" target="_blank"
+                            title="Twitter"><i class="fab fa-telegram"></i></a></li>
+                    <li class="social-icons-linkedin"><a href="https://www.instagram.com/thuanmom010101/" target="_blank"
+                            title="Linkedin"><i class="fab fa-instagram"></i></a></li>
                 </ul>
             </div>
         </div>

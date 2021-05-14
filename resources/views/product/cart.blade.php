@@ -7,23 +7,8 @@
 
     <div class="container">
 
-        <div class="row">
-            <div class="col">
-                <ul class="breadcrumb font-weight-bold text-6 justify-content-center my-5">
-                    <li class="text-transform-none mr-2">
-                        <a href="shop-cart.html" class="text-decoration-none text-color-primary">{{ __('Shopping Cart') }}</a>
-                    </li>
-                    <li class="text-transform-none text-color-grey-lighten mr-2">
-                        <a href="shop-checkout.html"
-                            class="text-decoration-none text-color-grey-lighten text-color-hover-primary">{{ __('Checkout') }}</a>
-                    </li>
-                    <li class="text-transform-none text-color-grey-lighten">
-                        <a href="shop-order-complete.html"
-                            class="text-decoration-none text-color-grey-lighten text-color-hover-primary">{{ __('Order Complete')}}</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+        @include('widget.cart-menu')
+
         <div class="row pb-4 mb-5">
             @if (session('cart')!=null)
             <div class="col-lg-8 mb-5 mb-lg-0">
@@ -78,7 +63,7 @@
                                             <span class="amount font-weight-medium text-color-grey">{{ number_format($product['price']) }}</span>
                                         </td>
                                         <td class="product-quantity pl-3">
-                                            <input style="border: none" type="number" name="quatity[{{ $product['id'] }}]" id="" value="{{ number_format($product['qty']) }}">
+                                            <input style="border: none" type="number" id="product_{{ $product['id'] }}" name="quatity[{{ $product['id'] }}]" id="" value="{{ number_format($product['qty']) }}">
                                         </td>
                                         <td class="product-subtotal text-right">
                                             <span class="amount text-color-dark font-weight-bold text-4">{{number_format($product['qty'] * $product['price'])}}</span>
@@ -98,7 +83,7 @@
                                                     </div> --}}
                                                 </div>
                                                 <div class="col-md-auto px-0">
-                                                    <button type="submit" class="btn btn-light btn-modern text-color-dark bg-color-light-scale-2 text-color-hover-light bg-color-hover-primary text-uppercase text-3 font-weight-bold border-0 border-radius-0 btn-px-4 py-3">Update Cart</button>
+                                                    <button type="submit" class="btn btn-light btn-modern text-color-dark bg-color-light-scale-2 text-color-hover-light bg-color-hover-primary text-uppercase text-3 font-weight-bold border-0 border-radius-0 btn-px-4 py-3">{{ __('Update Cart') }}</button>
                                                 </div>
                                             </div>
                                         </td>
@@ -130,7 +115,7 @@
                                 @endphp
                                 <tr class="shipping">
                                     <td colspan="2">
-                                        <strong class="d-block text-color-dark mb-2">{{ __('Shipping') }}</strong>
+                                        <strong class="d-block text-color-dark mb-2 text-capitalize">{{ __('shipping') }}</strong>
                                         <div class="d-flex flex-column">
                                             <label class="d-flex align-items-center text-color-grey mb-0"
                                                 for="shipping_method1">
@@ -174,7 +159,4 @@
 </div>
 @endsection
 @section('page-js')
-<script src="{{ asset('assets/vendor/bootstrap-star-rating/js/star-rating.min.js') }}"></script>
-<script src="{{ asset('assets/vendor/bootstrap-star-rating/themes/krajee-fas/theme.min.js') }}"></script>
-<script src="{{ asset('assets/vendor/jquery.countdown/jquery.countdown.min.js') }}"></script>
 @endsection

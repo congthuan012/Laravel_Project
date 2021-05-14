@@ -34,7 +34,7 @@ class CartController extends Controller
         if($product== null)
         {
             $page = 'product';
-            return redirect()->route('product.shop')->with(['mgs'=>'Sản phẩm không tồn tại','status'=>'danger']);
+            return redirect()->route('product.shop')->with(['msg'=>'Sản phẩm không tồn tại','status'=>'danger']);
         }
         //Kiểm tra sả phẩm có trong giỏ hàng chưa
         $sl = 1;
@@ -57,10 +57,10 @@ class CartController extends Controller
                 'qty' => $sl,
             ];
             session(['cart'=>$cart]);
-            return redirect()->route('product.shop')->with(['mgs'=>'Thêm thành công!','status'=>'success']);
+            return redirect()->route('product.shop')->with(['msg'=>'Thêm thành công!','status'=>'success']);
         }else{
             //Trả về trang chủ
-            return redirect()->route('product.shop')->with(['mgs'=>'Số lượng sản phẩm còn lại không đủ','status'=>'danger']);
+            return redirect()->route('product.shop')->with(['msg'=>'Số lượng sản phẩm còn lại không đủ','status'=>'danger']);
         }
     }
 
@@ -76,7 +76,7 @@ class CartController extends Controller
 
     public function doCheckOut(Request $request){
 
-        $page = 'checkout';
+        $page = 'complete';
         // dd($request);
         if(!session('cart')){
             return redirect()->route('product.shop')->with(['msg'=>"No orders yet!",'status'=>'warning']);
@@ -178,7 +178,7 @@ class CartController extends Controller
         }else{
             //Trả về trang chủ
             return response()->json([
-                'mgs'=>'Số lượng sản phẩm còn lại không đủ',
+                'msg'=>'Số lượng sản phẩm còn lại không đủ',
                 'status'=>'danger'
             ]);
         }

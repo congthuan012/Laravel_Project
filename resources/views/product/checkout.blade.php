@@ -7,21 +7,7 @@
 
     <div class="container">
 
-        <div class="row">
-            <div class="col">
-                <ul class="breadcrumb breadcrumb-dividers-no-opacity font-weight-bold text-6 justify-content-center my-5">
-                    <li class="text-transform-none mr-2">
-                        <a href="" class="text-decoration-none text-color-dark text-color-hover-primary">{{ __('Shopping Cart') }}</a>
-                    </li>
-                    <li class="text-transform-none text-color-dark mr-2">
-                        <a href="" class="text-decoration-none text-color-primary">{{ __('Checkout') }}</a>
-                    </li>
-                    <li class="text-transform-none text-color-grey-lighten">
-                        <a href="" class="text-decoration-none text-color-grey-lighten text-color-hover-primary">{{ __('Order Complete') }}</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+        @include('widget.cart-menu')
 
         <form role="form" class="needs-validation" method="post" action="{{ route('do-checkout') }}">
             @csrf

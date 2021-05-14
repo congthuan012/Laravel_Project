@@ -65,7 +65,7 @@
                 <div class="header-column">
                     <div class="header-row">
                         <div class="header-logo">
-                            <a href="index.html">
+                            <a href="{{ route('index') }}">
                                 <img alt="Porto" width="100" height="48"
                                     src="{{asset('assets/img/logo-default-slim.png')}}">
                             </a>
