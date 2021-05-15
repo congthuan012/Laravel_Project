@@ -155,7 +155,7 @@
                                         <div style="border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:25px; padding-bottom:25px; padding-right: 0px; padding-left: 25px;">
                                             <!--<![endif]-->
                                             <div align="left" class="img-container left fullwidthOnMobile fixedwidth" style="padding-right: 0px;padding-left: 0px;">
-                                                <div style="font-size:1px;line-height:5px"> </div><img alt="Image" border="0" class="left fullwidthOnMobile fixedwidth" src="https://bbbootstrap.com/assets/demo/html/ask-me-html/images/logo.png" style="text-decoration: none; -ms-interpolation-mode: bicubic; border: 0; height: auto; width: 100%; max-width: 195px; display: block;" title="Image" width="195" />
+                                                <div style="font-size:1px;line-height:5px"> </div><img alt="Image" border="0" class="left fullwidthOnMobile fixedwidth" src="{{asset('assets/img/logo-default-slim.png')}}" style="text-decoration: none; -ms-interpolation-mode: bicubic; border: 0; height: auto; width: 100%; max-width: 195px; display: block;" title="Image" width="195" />
                                             </div>
                                         </div>
                                     </div>
@@ -166,8 +166,8 @@
                                         <div style="border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:25px; padding-bottom:25px; padding-right: 25px; padding-left: 0px;">
                                             <!--<![endif]-->
                                             <div align="right" class="button-container" style="padding-top:10px;padding-right:0px;padding-bottom:10px;padding-left:10px;">
-                                                <a href="#" style="-webkit-text-size-adjust: none; text-decoration: none; display: inline-block; color: #F5F5F5; background-color: #E32142; border-radius: 14px; -webkit-border-radius: 14px; -moz-border-radius: 14px; width: auto; width: auto; border-top: 1px solid #E32142; border-right: 1px solid #E32142; border-bottom: 1px solid #E32142; border-left: 1px solid #E32142; padding-top: 3px; padding-bottom: 3px; font-family: 'Lato', Tahoma, Verdana, Segoe, sans-serif; text-align: center; mso-border-alt: none; word-break: keep-all;" target="_blank"><span style="padding-left:15px;padding-right:15px;font-size:14px;display:inline-block;">
-                                                        <span style="font-size: 16px; line-height: 32px;"><span style="font-size: 14px; line-height: 28px;">My account</span></span>
+                                                <a href="{{ route('product.shop') }}" style="-webkit-text-size-adjust: none; text-decoration: none; display: inline-block; color: #F5F5F5; background-color: #E32142; border-radius: 14px; -webkit-border-radius: 14px; -moz-border-radius: 14px; width: auto; width: auto; border-top: 1px solid #E32142; border-right: 1px solid #E32142; border-bottom: 1px solid #E32142; border-left: 1px solid #E32142; padding-top: 3px; padding-bottom: 3px; font-family: 'Lato', Tahoma, Verdana, Segoe, sans-serif; text-align: center; mso-border-alt: none; word-break: keep-all;" target="_blank"><span style="padding-left:15px;padding-right:15px;font-size:14px;display:inline-block;">
+                                                        <span style="font-size: 16px; line-height: 32px;"><span style="font-size: 14px; line-height: 28px;">Go Shop</span></span>
                                                     </span></a>
                                                 <!--[if mso]></center></v:textbox></v:roundrect></td></tr></table><![endif]-->
                                             </div>
@@ -288,7 +288,7 @@
                                         <div style="border-top:0px solid transparent; border-left:0px solid transparent; border-bottom:0px solid transparent; border-right:0px solid transparent; padding-top:5px; padding-bottom:5px; padding-right: 0px; padding-left: 0px;">
                                             <!--<![endif]-->
                                             <div align="center" class="img-container center fixedwidth" style="padding-right: 0px;padding-left: 0px;">
-                                                <img align="center" alt="Image" border="0" class="center fixedwidth" src="{{ $product['img'] }}" style="text-decoration: none; -ms-interpolation-mode: bicubic; border: 0; height: auto; width: 130px; max-width: 130px; display: block;" title="Image" width="130" />
+                                                <img align="center" alt="Image" border="0" class="center fixedwidth" src="{{ asset($product['img']) }}" style="text-decoration: none; -ms-interpolation-mode: bicubic; border: 0; height: auto; width: 130px; max-width: 130px; display: block;" title="Image" width="130" />
                                             </div>
                                         </div>
                                     </div>
