@@ -34,7 +34,7 @@ class CartController extends Controller
         if($product== null)
         {
             $page = 'product';
-            return redirect()->route('product.shop')->with(['msg'=>'Sản phẩm không tồn tại','status'=>'danger']);
+            return redirect()->route('product.shop')->with(['msg'=>'Product does not exist','status'=>'danger']);
         }
         //Kiểm tra sả phẩm có trong giỏ hàng chưa
         $sl = 1;
@@ -57,10 +57,10 @@ class CartController extends Controller
                 'qty' => $sl,
             ];
             session(['cart'=>$cart]);
-            return redirect()->route('product.shop')->with(['msg'=>'Thêm thành công!','status'=>'success']);
+            return redirect()->route('product.shop')->with(['msg'=>'Add to cart is success!','status'=>'success']);
         }else{
             //Trả về trang chủ
-            return redirect()->route('product.shop')->with(['msg'=>'Số lượng sản phẩm còn lại không đủ','status'=>'danger']);
+            return redirect()->route('product.shop')->with(['msg'=>'The number of remaining products is not enough','status'=>'danger']);
         }
     }
 
@@ -124,7 +124,7 @@ class CartController extends Controller
             if($cart[$index]['stock']>$value)
                 $cart[$index]['qty'] = $value;
             else
-                $errs .=$cart[$index]['qty'].' Không đủ số lượng!';
+                $errs .=$cart[$index]['qty'].'The number of remaining products is not enough!';
         }
         session(['cart'=> $cart]);
         return redirect()->route('cart');
@@ -144,7 +144,7 @@ class CartController extends Controller
         {
             $page = 'product';
             return response()->json([
-                'msg'=>'Sản phẩm không tồn tại',
+                'msg'=>'Product does not exist',
                 'status'=>'error'
             ]);
         }
@@ -171,14 +171,14 @@ class CartController extends Controller
             session(['cart'=>$cart]);
             $minicart = view('widget.minicart')->render();
             return response()->json([
-                'msg'       =>'Thêm thành công',
+                'msg'       =>'Add to cart is success',
                 'status'    =>'success',
                 'minicart'  =>$minicart
             ]);
         }else{
             //Trả về trang chủ
             return response()->json([
-                'msg'=>'Số lượng sản phẩm còn lại không đủ',
+                'msg'=>'The number of remaining products is not enough',
                 'status'=>'danger'
             ]);
         }
@@ -195,13 +195,13 @@ class CartController extends Controller
             session(['cart'=>$arr]);
             $minicart = view('widget.minicart')->render();
             return response()->json([
-                'msg'       =>'Xóa khỏi giỏ hàng thành công',
+                'msg'       =>'Delete form cart is success',
                 'status'    =>'success',
                 'minicart'  =>$minicart
             ]);
         }else{
             return response()->json([
-                'msg'=>'Không tìm thấy sản phẩm!',
+                'msg'=>'No products found!',
                 'status'=>'error',
             ]);
         }

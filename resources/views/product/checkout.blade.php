@@ -1,6 +1,6 @@
 @extends('layout')
 @section('title')
-<title>Porto - Thanh toán</title>
+<title>Porto - {{ __('Order') }}</title>
 @endsection
 @section('content')
 <div role="main" class="main shop pb-4">

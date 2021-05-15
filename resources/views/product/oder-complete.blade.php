@@ -1,6 +1,6 @@
 @extends('layout')
 @section('title')
-<title>Porto - Hoàn tất thanh toán</title>
+<title>Porto - {{ __('Order Complete') }}</title>
 @endsection
 @section('content')
 @php
