@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTableLienhe extends Migration
+class CreateBlogTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,15 @@ class CreateTableLienhe extends Migration
      */
     public function up()
     {
-        Schema::create('lienhe', function (Blueprint $table) {
+        Schema::create('blog', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_quan_tri');
-            $table->string('email',255)->nullable();
-            $table->string('ten',255)->nullable();
-            $table->string('chu_de',255)->nullable();
+            $table->string('tieu_de')->nullable();
+            $table->string('tom_tat')->nullable();
             $table->longText('noi_dung')->nullable();
+            $table->integer('tac_gia')->nullable();
+            $table->integer('loai')->nullable();
+            $table->string('anh')->nullable();
+            $table->string('slug')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
@@ -32,8 +34,6 @@ class CreateTableLienhe extends Migration
      */
     public function down()
     {
-        Schema::table('lienhe', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('blog');
     }
 }

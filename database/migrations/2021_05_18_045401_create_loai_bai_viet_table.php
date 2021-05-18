@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddColumnToBlogTable extends Migration
+class CreateLoaiBaiVietTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class AddColumnToBlogTable extends Migration
      */
     public function up()
     {
-        Schema::table('blog', function (Blueprint $table) {
-            $table->integer('tac_gia')->nullable();
-            $table->integer('loai')->nullable();
-            $table->string('anh',255)->nullable();
+        Schema::create('loai_bai_viet', function (Blueprint $table) {
+            $table->id();
+            $table->string('ten')->nullable();
+            $table->string('mo_ta')->nullable();
+            $table->timestamps();
             $table->softDeletes();
         });
     }
@@ -28,8 +29,6 @@ class AddColumnToBlogTable extends Migration
      */
     public function down()
     {
-        Schema::table('blog', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('loai_bai_viet');
     }
 }

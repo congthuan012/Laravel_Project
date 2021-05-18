@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddColumnToKhachhangTable extends Migration
+class CreateTheoDoiDonHangTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class AddColumnToKhachhangTable extends Migration
      */
     public function up()
     {
-        Schema::table('khachhang', function (Blueprint $table) {
-            $table->string('password');
-            $table->rememberToken();
+        Schema::create('theo_doi_don_hang', function (Blueprint $table) {
+            $table->integer('id')->primary();
+            $table->string('trang_thai');
+            $table->softDeletes();
         });
     }
 
@@ -26,8 +27,6 @@ class AddColumnToKhachhangTable extends Migration
      */
     public function down()
     {
-        Schema::table('khachhang', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('theo_doi_don_hang');
     }
 }
