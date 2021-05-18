@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTableLienHeKh extends Migration
+class CreateNhaCungCapTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateTableLienHeKh extends Migration
      */
     public function up()
     {
-        Schema::create('table_lien_he_kh', function (Blueprint $table) {
+        Schema::create('nha_cung_cap', function (Blueprint $table) {
             $table->id();
-            $table->string('tieu_de',255)->nullable();
-            $table->longText('noi_dung')->nullable();
-            $table->integer('nguoi_tao')->nullable();
+            $table->string('ten');
+            $table->tinyInteger('trang_thai');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -30,6 +29,6 @@ class CreateTableLienHeKh extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('table_lien_he_kh');
+        Schema::dropIfExists('nha_cung_cap');
     }
 }

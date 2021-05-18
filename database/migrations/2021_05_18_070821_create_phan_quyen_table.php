@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTableBlog extends Migration
+class CreatePhanQuyenTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateTableBlog extends Migration
      */
     public function up()
     {
-        Schema::create('blog', function (Blueprint $table) {
-            $table->id();
-            $table->string('tieu_de')->nullable();
-            $table->string('tom_tat')->nullable();
-            $table->string('noi_dung')->nullable();
-            $table->timestamps();
+        Schema::create('phan_quyen', function (Blueprint $table) {
+            $table->integer('ma_chuc_nang');
+            $table->integer('ma_quan_tri');
+            $table->primary(['ma_chuc_nang', 'ma_quan_tri']);
         });
     }
 
@@ -29,6 +27,6 @@ class CreateTableBlog extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('table_blog');
+        Schema::dropIfExists('phan_quyen');
     }
 }

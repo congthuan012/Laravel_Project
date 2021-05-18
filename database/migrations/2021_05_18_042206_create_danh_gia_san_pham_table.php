@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTableDanhGiaSanPham extends Migration
+class CreateDanhGiaSanPhamTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,9 +15,10 @@ class CreateTableDanhGiaSanPham extends Migration
     {
         Schema::create('danh_gia_san_pham', function (Blueprint $table) {
             $table->id();
-            $table->integer('san_pham_id');
-            $table->string('danh_gia',255)->nullable();
+            $table->integer('san_pham_id')->nullable();
+            $table->string('danh_gia')->nullable();
             $table->integer('nguoi_dung_id')->nullable();
+            $table->integer('tra_loi')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
@@ -30,6 +31,6 @@ class CreateTableDanhGiaSanPham extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('table_danh_gia_san_pham');
+        Schema::dropIfExists('danh_gia_san_pham');
     }
 }

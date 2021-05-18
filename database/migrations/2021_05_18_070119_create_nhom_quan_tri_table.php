@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTableLoaiBaiBiet extends Migration
+class CreateNhomQuanTriTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateTableLoaiBaiBiet extends Migration
      */
     public function up()
     {
-        Schema::create('loai_bai_viet', function (Blueprint $table) {
+        Schema::create('nhom_quan_tri', function (Blueprint $table) {
             $table->id();
-            $table->string('ten',255);
-            $table->string('mo_ta',255);
+            $table->string('ten')->nullable();
+            $table->string('mo_ta',255)->nullable();
+            $table->tinyInteger('trang_thai')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
@@ -29,6 +30,6 @@ class CreateTableLoaiBaiBiet extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('table_loai_bai_biet');
+        Schema::dropIfExists('nhom_quan_tri');
     }
 }
