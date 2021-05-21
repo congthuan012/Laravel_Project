@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\backend\AdminController;
 use App\Http\Controllers\frontend\BlogController;
 use App\Http\Controllers\frontend\CartController;
 use App\Http\Controllers\backend\ProductController;
@@ -88,8 +89,11 @@ Route::group(['middleware' => 'language'], function () {
 
         Route::get('contact', [HomeController::class, 'contact'])->name('contact');
         Route::post('contact', [HomeController::class, 'submitContact'])->name('contact');
+
     });
 });
+Route::get('dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
+Route::get('admin-login', [AdminController::class, 'login'])->name('admin.login');
 
 // Route::fallback(function(){
 //     return view('other.404');

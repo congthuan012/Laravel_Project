@@ -41,4 +41,31 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class,'role_users');
+    }
+
+    /**
+     * Checks if User has access to $permissions.
+     */
+
+    // hasAccess(): kiểm tra xem người dùng có quyền thực hiện một hành động nào đó không.
+    public function hasAccess(array $permissions) : bool
+    {
+        foreach($this->roles as $role)
+        {
+            if($role->hasAccess($permissions))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+    // inRole(): kiểm tra xem một người dùng có thuộc về một chức danh nào đó không.
+    public function inRole(string $roleSlug)
+    {
+        return $this->roles()->where('slug', $roleSlug)->count() == 1;
+    }
 }
