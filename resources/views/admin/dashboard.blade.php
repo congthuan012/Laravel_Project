@@ -325,7 +325,7 @@
 
                         <div class="widget-profile-info">
                             <div class="profile-picture">
-                                <img src="img/!logged-user.jpg">
+                                <img src="">
                             </div>
                             <div class="profile-info">
                                 <h4 class="name font-weight-semibold">John Doe</h4>
@@ -466,7 +466,7 @@
                                     <ul class="simple-user-list mb-3">
                                         <li>
                                             <figure class="image rounded">
-                                                <img src="img/!sample-user.jpg" alt="Joseph Doe Junior"
+                                                <img src="" alt="Joseph Doe Junior"
                                                     class="rounded-circle">
                                             </figure>
                                             <span class="title">Joseph Doe Junior</span>
@@ -474,7 +474,7 @@
                                         </li>
                                         <li>
                                             <figure class="image rounded">
-                                                <img src="img/!sample-user.jpg" alt="Joseph Junior"
+                                                <img src="" alt="Joseph Junior"
                                                     class="rounded-circle">
                                             </figure>
                                             <span class="title">Joseph Junior</span>
@@ -482,14 +482,14 @@
                                         </li>
                                         <li>
                                             <figure class="image rounded">
-                                                <img src="img/!sample-user.jpg" alt="Joe Junior" class="rounded-circle">
+                                                <img src="" alt="Joe Junior" class="rounded-circle">
                                             </figure>
                                             <span class="title">Joe Junior</span>
                                             <span class="message">Lorem ipsum dolor sit.</span>
                                         </li>
                                         <li>
                                             <figure class="image rounded">
-                                                <img src="img/!sample-user.jpg" alt="Joseph Doe Junior"
+                                                <img src="" alt="Joseph Doe Junior"
                                                     class="rounded-circle">
                                             </figure>
                                             <span class="title">Joseph Doe Junior</span>
@@ -568,21 +568,21 @@
                     <ul class="simple-user-list">
                         <li>
                             <figure class="image rounded">
-                                <img src="img/!sample-user.jpg" alt="Joseph Doe Junior" class="rounded-circle">
+                                <img src="" alt="Joseph Doe Junior" class="rounded-circle">
                             </figure>
                             <span class="title">Joseph Doe Junior</span>
                             <span class="message truncate">Lorem ipsum dolor sit.</span>
                         </li>
                         <li>
                             <figure class="image rounded">
-                                <img src="img/!sample-user.jpg" alt="Joseph Junior" class="rounded-circle">
+                                <img src="" alt="Joseph Junior" class="rounded-circle">
                             </figure>
                             <span class="title">Joseph Junior</span>
                             <span class="message truncate">Lorem ipsum dolor sit.</span>
                         </li>
                         <li>
                             <figure class="image rounded">
-                                <img src="img/!sample-user.jpg" alt="Joe Junior" class="rounded-circle">
+                                <img src="" alt="Joe Junior" class="rounded-circle">
                             </figure>
                             <span class="title">Joe Junior</span>
                             <span class="message truncate">Lorem ipsum dolor sit.</span>
@@ -643,9 +643,9 @@
                                         egestas.
                                     </p>
                                     <div class="thumbnail-gallery">
-                                        <a class="img-thumbnail lightbox" href="img/projects/project-4.jpg"
+                                        <a class="img-thumbnail lightbox" href=""
                                             data-plugin-options='{ "type":"image" }'>
-                                            <img class="img-fluid" width="215" src="img/projects/project-4.jpg">
+                                            <img class="img-fluid" width="215" src="">
                                             <span class="zoom">
                                                 <i class="fas fa-search"></i>
                                             </span>

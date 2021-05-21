@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\backend\AdminController;
+use App\Http\Controllers\backend\GuestController;
 use App\Http\Controllers\frontend\BlogController;
 use App\Http\Controllers\frontend\CartController;
 use App\Http\Controllers\backend\ProductController;
@@ -92,8 +93,14 @@ Route::group(['middleware' => 'language'], function () {
 
     });
 });
-Route::get('dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
 Route::get('admin-login', [AdminController::class, 'login'])->name('admin.login');
+Route::post('admin-login', [AdminController::class, 'doLogin'])->name('admin.login');
+Route::group(['middleware' => 'admin.login','name'=>'management'], function () {
+    Route::get('dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
+    Route::prefix('guest')->name('guest.')->group(function () {
+        Route::get('/guest-index',[GuestController::class,'index'])->name('index');
+    });
+});
 
 // Route::fallback(function(){
 //     return view('other.404');

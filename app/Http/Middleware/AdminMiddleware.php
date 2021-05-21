@@ -18,7 +18,7 @@ class AdminMiddleware
     public function handle(Request $request, Closure $next)
     {
         if(!Auth::guard('users')->check())
-            return redirect()->route('')->with(['msg'=>'Vui lòng đăng nhập','status'=>'warning']);
+            return redirect()->route('admin.login')->with(['msg'=>'Vui lòng đăng nhập','status'=>'warning']);
         return $next($request);
     }
 }

@@ -1,7 +1,7 @@
 <header class="header">
     <div class="logo-container">
-        <a href="../2.2.0" class="logo">
-            <img src="img/logo.png" width="75" height="35" alt="Porto Admin" />
+        <a href="{{ route('dashboard') }}" class="logo">
+            <img src="{{ asset('assets-admin/img/logo.png') }}" width="75" height="35" alt="Porto Admin" />
         </a>
         <div class="d-md-none toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html"
             data-fire-event="sidebar-left-opened">
@@ -91,7 +91,7 @@
                             <li>
                                 <a href="#" class="clearfix">
                                     <figure class="image">
-                                        <img src="img/!sample-user.jpg" alt="Joseph Doe Junior"
+                                        <img src="{{ asset('assets-admin/img/no-image.png') }}" alt="Joseph Doe Junior"
                                             class="rounded-circle" />
                                     </figure>
                                     <span class="title">Joseph Doe</span>
@@ -101,7 +101,7 @@
                             <li>
                                 <a href="#" class="clearfix">
                                     <figure class="image">
-                                        <img src="img/!sample-user.jpg" alt="Joseph Junior" class="rounded-circle" />
+                                        <img src="{{ asset('assets-admin/img/no-image.png') }}" alt="Joseph Junior" class="rounded-circle" />
                                     </figure>
                                     <span class="title">Joseph Junior</span>
                                     <span class="message truncate">Truncated message. Lorem ipsum dolor sit amet,
@@ -121,7 +121,7 @@
                             <li>
                                 <a href="#" class="clearfix">
                                     <figure class="image">
-                                        <img src="img/!sample-user.jpg" alt="Joe Junior" class="rounded-circle" />
+                                        <img src="{{ asset('assets-admin/img/no-image.png') }}" alt="Joe Junior" class="rounded-circle" />
                                     </figure>
                                     <span class="title">Joe Junior</span>
                                     <span class="message">Lorem ipsum dolor sit.</span>
@@ -130,7 +130,7 @@
                             <li>
                                 <a href="#" class="clearfix">
                                     <figure class="image">
-                                        <img src="img/!sample-user.jpg" alt="Joseph Junior" class="rounded-circle" />
+                                        <img src="{{ asset('assets-admin/img/no-image.png') }}" alt="Joseph Junior" class="rounded-circle" />
                                     </figure>
                                     <span class="title">Joseph Junior</span>
                                     <span class="message">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
@@ -207,8 +207,8 @@
         <div id="userbox" class="userbox">
             <a href="#" data-toggle="dropdown">
                 <figure class="profile-picture">
-                    <img src="img/!logged-user.jpg" alt="Joseph Doe" class="rounded-circle"
-                        data-lock-picture="img/!logged-user.jpg" />
+                    <img src="{{ asset('assets-admin/img/icon.png') }}" alt="Joseph Doe" class="rounded-circle"
+                        data-lock-picture="{{ asset('assets-admin/img/no-image.png') }}" />
                 </figure>
                 <div class="profile-info" data-lock-name="John Doe" data-lock-email="johndoe@okler.com">
                     <span class="name">John Doe Junior</span>
